@@ -53,3 +53,8 @@ This will be evaluated similar to a real-world submission, including:
 2. Staterequestavailabletimes
 3. providerrequest
 4. There appears to be a different API in teh checkout flow
+
+## Unforseen Challenges
+1) I did not account for the multiple interactive APIs on the web application.  During my initial pass through the application, i noticed a graphQL api that was being used.  I then filtered the network console for that API and didn't account for the appointment API
+2) I have been writing tests in Python for the majority of the last 3-4 years.  Although I know the playwright API, I did not account for the added context swithcing of moving from Python to Node.  That slowed me down a bit.  I should have written the tests out of the gate in Python instead.
+

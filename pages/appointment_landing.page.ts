@@ -24,5 +24,9 @@ export class AppointmentLanding {
     await this.page.goto(this.pageUri);
   }
 
+  stateBtn(state: string) {
+    // this is expecting a state to be provided from the API
+    return this.page.locator(`button[data-testid="${state}"]`);
+  }
   
 }
