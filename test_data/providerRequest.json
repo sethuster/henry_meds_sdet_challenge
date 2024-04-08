@@ -1,0 +1,7 @@
+{
+    "operationName": "checkoutQuery",
+    "query": "query checkoutQuery($providerId: uuid!) {\n  provider: provider_provider_by_pk(id: $providerId) {\n    ...Checkout_ProviderFragment\n    __typename\n  }\n}\n\nfragment AppointmentOverview_ProviderFragment on provider_provider {\n  id: id\n  displayName: display_name\n  __typename\n}\n\nfragment PaymentConfirmed_ProviderFragment on provider_provider {\n  id: id\n  displayName: display_name\n  __typename\n}\n\nfragment ProviderHero_ProviderFragment on provider_provider {\n  profileImage: profile_image\n  displayName: display_name\n  __typename\n}\n\nfragment Checkout_ProviderFragment on provider_provider {\n  ...AppointmentOverview_ProviderFragment\n  ...PaymentConfirmed_ProviderFragment\n  ...ProviderHero_ProviderFragment\n  __typename\n}",
+    "variables": {
+        "providerId": "02e66266-c3f2-48b9-bbac-e7f0c6111457"
+    }
+}

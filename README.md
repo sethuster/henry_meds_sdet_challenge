@@ -47,3 +47,9 @@ This will be evaluated similar to a real-world submission, including:
     5. Schedule appointment for California, Illinois, Texas
         - verify appointment slot opens again after 30 minutes (assuming nobody is confirming appointments) 
     6. Other state flow - Same form for states without appointment
+
+## API Flow
+1. stateprovidertreatment.json
+2. Staterequestavailabletimes
+3. providerrequest
+4. There appears to be a different API in teh checkout flow
