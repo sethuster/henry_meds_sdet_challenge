@@ -1,0 +1,20 @@
+{
+    "operationName": "statesByProviderTreatment",
+    "query": "query statesByProviderTreatment($where: provider_provider_treatment_bool_exp) {\n  statesByProviderTreatment: provider_provider_treatment(\n    distinct_on: state\n    where: $where\n  ) {\n    ...State_ProviderTreatmentFragment\n    __typename\n  }\n}\n\nfragment State_ProviderTreatmentFragment on provider_provider_treatment {\n  state\n  __typename\n}",
+    "variables": {
+        "where": {
+            "_and": [
+                {
+                    "state": {
+                        "_neq": "test"
+                    }
+                }
+            ],
+            "treatment": {
+                "short_id": {
+                    "_eq": "weightloss"
+                }
+            }
+        }
+    }
+}
