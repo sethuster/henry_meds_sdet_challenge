@@ -29,8 +29,8 @@ test.describe.serial('API Tests', () => {
       in conjucntion with events on the page and embedded JS, each component of the app should be validated
       in isolation with the API level first.  
 
-      All Business logic shoudl be abstracted to the data / network layer as much as possible. Application layer,
-      shoudl contains bare minimum validataion logic.
+      All Business logic should be abstracted to the data / network layer as much as possible. Application layer,
+      should contain bare minimum validataion logic.
     */
 
   let statesAvailable; // used to retrieve states to display on the main page
@@ -136,7 +136,8 @@ test.describe.serial('API Tests', () => {
   });
 
  /*
- There are several more tests that I could think of to do at this point depending on access to the AUT. 
+ There are several more tests that I would want to do at this point depending on access to the AUT. 
+ Just to name a few:
  - Verify confirmation emails to provider and customers
  - Verify payment information saved in payment processor
  - Verify timeslot is no longer available for provider

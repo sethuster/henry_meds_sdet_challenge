@@ -71,8 +71,7 @@ In a real work scenario, I would try and understand the scope of the application
     5. How is the data provided to this application?
     6. How can I setup / teardown test data?
 
-Once those question are answered, I start to begin building some test scenarios.
-
+Once those questions are answered suffciently, I start to begin building some test scenarios.
 
 ### Test Brainstorming - Initial Review
 1. Verify I have access to the application under test - Confirmed
@@ -90,7 +89,7 @@ Once those question are answered, I start to begin building some test scenarios.
     2. Validate page makes request to API (https://henry-dev.hasura.app/v1/graphql)
     3. Footer links
     4. Cookie preferences (if time)
-    5. Schedule appointment for California, Illinois, Texas
+    5. Schedule appointment for States with provider schedules
         - verify appointment slot opens again after 30 minutes (assuming nobody is confirming appointments) 
     6. Other state flow - Same form for states without appointment
 
@@ -98,12 +97,14 @@ Once those question are answered, I start to begin building some test scenarios.
 1. stateprovidertreatment.json
 2. Staterequestavailabletimes
 3. providerrequest
-4. There appears to be a different API in teh checkout flow
+4. appointmentrequest
+5. Checkout API
 
 ## Unforseen Challenges / Lesson Learned
 1) I did not account for the multiple interactive APIs on the web application.  During my initial pass through the application, i noticed a graphQL api that was being used.  I then filtered the network console for that API and didn't account for the appointment API
 2) I have been writing tests in Python for the majority of the last 3-4 years.  Although I know the playwright API, I did not account for the added context swithcing of moving from Python to Node.  That slowed me down a bit.  I should have written the tests out of the gate in Python instead.
 3) Managing people for the last few years, and doing code reviews I realize that I am out of practice building automated tests.  writing tests again has been a lot of fun actually, but eye opening in the logisitics of starting something from scatch. This took a bit longer than expected. 
+
 
 ### Timebox
 | Time | duration | Notes |
