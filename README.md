@@ -27,8 +27,54 @@ This will be evaluated similar to a real-world submission, including:
 - How cleanly structured is the code and tests?
 - What ‘extra’ factors are there, that show exceptional talent?
 
-## My Process
+## Install Requirements
 
+1) Make sure you have node v20.12.0 installed on your machine.  
+2) Clone this repo locally
+3) npm install
+
+Thant should just about do it.  Alternatively you can use the Docker image to run the tests in the repo. 
+
+### Useful Playwright commands
+
+npx playwright test
+Runs the end-to-end tests.
+
+npx playwright test --ui
+Starts the interactive UI mode.
+
+npx playwright test --project=chromium
+Runs the tests only on Desktop Chrome.
+
+npx playwright test example
+Runs the tests in a specific file.
+
+npx playwright test --debug
+Runs the tests in debug mode.
+
+npx playwright codegen
+Auto generate tests with Codegen.
+
+## Docker Install
+
+1) Make sure you have docker installed on your machine
+2) `docker build -t henrymedstests .`
+3) `docker run henrymedstests`
+
+## My Process
+On new system or new application I like to take at least an hour and poke around in the application and get familiar with it.  What are the basic APIs and user flows of the application.
+In a real work scenario, I would try and understand the scope of the application under test and the testability of the application. I want to answer the following questions:
+    1. What systems does this application use?
+    2. What is the deployment process like?
+    3. How are feature flags used (if at all) how are they enabled?
+    4. What is the deployment process like?
+    5. How is the data provided to this application?
+    6. How can I setup / teardown test data?
+
+Once those question are answered, I start to begin building some test scenarios.
+
+
+### Test Brainstorming - Initial Review
 1. Verify I have access to the application under test - Confirmed
 2. Carefully read through the requirements
     - Providers and clients
@@ -54,7 +100,20 @@ This will be evaluated similar to a real-world submission, including:
 3. providerrequest
 4. There appears to be a different API in teh checkout flow
 
-## Unforseen Challenges
+## Unforseen Challenges / Lesson Learned
 1) I did not account for the multiple interactive APIs on the web application.  During my initial pass through the application, i noticed a graphQL api that was being used.  I then filtered the network console for that API and didn't account for the appointment API
 2) I have been writing tests in Python for the majority of the last 3-4 years.  Although I know the playwright API, I did not account for the added context swithcing of moving from Python to Node.  That slowed me down a bit.  I should have written the tests out of the gate in Python instead.
+3) Managing people for the last few years, and doing code reviews I realize that I am out of practice building automated tests.  writing tests again has been a lot of fun actually, but eye opening in the logisitics of starting something from scatch. This took a bit longer than expected. 
+
+### Timebox
+| Time | duration | Notes |
+| ----- | ---- | -----| 
+| 08:30  | 1 hour | recieved code challenge - read instructions, explored app |
+| 09:30  | 2 hours | started new project - installed playwright and node | 
+| 11:30 | 3 hours | broke for lunch and other meetings |
+| 14:30 | 2 hours | Wrote tests and experimented with UI / API |
+| 16:30 | 5.5 hours | Toddler / dadlife |
+| 21:00 | 1 hour | Review repo - build notes and submit |
+
+Total Elapsed Time working on project: ~5 Hours
 

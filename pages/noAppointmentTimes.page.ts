@@ -24,7 +24,6 @@ export class StateAppointmentTimes {
 
   appointementBtn(timestamp: string) {
     // this is expecting a state to be provided from the API
-    console.log(`button[data-testid="${timestamp}"]`)
     return this.page.locator(`button[data-testid="${timestamp}"]`);
   }
 }
